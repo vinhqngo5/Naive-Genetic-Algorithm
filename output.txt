@@ -1,0 +1,155 @@
+*********One_Max (uniform_crossover)*********
+size of binary_string: 10
+MRPS: 5 Evaluation: 6
+MRPS: 3 Evaluation: 6
+MRPS: 3 Evaluation: 7
+MRPS: 3 Evaluation: 3
+MRPS: 3 Evaluation: 3
+MRPS: 3 Evaluation: 3
+MRPS: 3 Evaluation: 8
+MRPS: 3 Evaluation: 3
+MRPS: 3 Evaluation: 3
+MRPS: 3 Evaluation: 6
+mean_MRPS:3.2
+mean_Evaluations:4.8
+Running time: 0:00:00
+--------------------------
+size of binary_string: 20
+MRPS: 7 Evaluation: 11
+MRPS: 5 Evaluation: 12
+MRPS: 5 Evaluation: 11
+MRPS: 5 Evaluation: 11
+MRPS: 8 Evaluation: 11
+MRPS: 5 Evaluation: 14
+MRPS: 5 Evaluation: 11
+MRPS: 8 Evaluation: 13
+MRPS: 5 Evaluation: 9
+MRPS: 5 Evaluation: 9
+mean_MRPS:5.8
+mean_Evaluations:11.2
+Running time: 0:00:01
+--------------------------
+size of binary_string: 40
+MRPS: 11 Evaluation: 20
+MRPS: 11 Evaluation: 19
+MRPS: 13 Evaluation: 18
+MRPS: 11 Evaluation: 16
+MRPS: 9 Evaluation: 15
+MRPS: 9 Evaluation: 17
+MRPS: 13 Evaluation: 17
+MRPS: 13 Evaluation: 18
+MRPS: 16 Evaluation: 19
+MRPS: 11 Evaluation: 14
+mean_MRPS:11.7
+mean_Evaluations:17.3
+Running time: 0:00:10
+--------------------------
+size of binary_string: 80
+MRPS: 21 Evaluation: 28
+MRPS: 25 Evaluation: 25
+MRPS: 21 Evaluation: 25
+MRPS: 25 Evaluation: 24
+MRPS: 25 Evaluation: 25
+MRPS: 19 Evaluation: 26
+MRPS: 23 Evaluation: 26
+MRPS: 23 Evaluation: 28
+MRPS: 21 Evaluation: 28
+MRPS: 21 Evaluation: 26
+mean_MRPS:22.4
+mean_Evaluations:26.1
+Running time: 0:00:55
+--------------------------
+size of binary_string: 160
+MRPS: 39 Evaluation: 34
+MRPS: 43 Evaluation: 35
+MRPS: 45 Evaluation: 37
+MRPS: 39 Evaluation: 34
+MRPS: 39 Evaluation: 35
+MRPS: 39 Evaluation: 36
+MRPS: 37 Evaluation: 37
+MRPS: 31 Evaluation: 35
+MRPS: 43 Evaluation: 34
+MRPS: 49 Evaluation: 35
+mean_MRPS:40.4
+mean_Evaluations:35.2
+Running time: 0:05:48
+--------------------------
+
+
+
+*********One_Max (one_point_crossover)*********
+size of binary_string: 10
+MRPS: 7 Evaluation: 6
+MRPS: 5 Evaluation: 11
+MRPS: 3 Evaluation: 10
+MRPS: 3 Evaluation: 4
+MRPS: 7 Evaluation: 7
+MRPS: 5 Evaluation: 8
+MRPS: 3 Evaluation: 5
+MRPS: 5 Evaluation: 9
+MRPS: 7 Evaluation: 7
+MRPS: 5 Evaluation: 8
+mean_MRPS:5.0
+mean_Evaluations:7.5
+Running time: 0:00:00
+--------------------------
+size of binary_string: 20
+MRPS: 11 Evaluation: 16
+MRPS: 7 Evaluation: 10
+MRPS: 9 Evaluation: 12
+MRPS: 13 Evaluation: 16
+MRPS: 13 Evaluation: 10
+MRPS: 13 Evaluation: 13
+MRPS: 13 Evaluation: 20
+MRPS: 13 Evaluation: 11
+MRPS: 15 Evaluation: 17
+MRPS: 9 Evaluation: 15
+mean_MRPS:11.6
+mean_Evaluations:14.0
+Running time: 0:00:03
+--------------------------
+size of binary_string: 40
+MRPS: 33 Evaluation: 25
+MRPS: 31 Evaluation: 21
+MRPS: 35 Evaluation: 25
+MRPS: 41 Evaluation: 30
+MRPS: 37 Evaluation: 25
+MRPS: 29 Evaluation: 19
+MRPS: 45 Evaluation: 23
+MRPS: 37 Evaluation: 25
+MRPS: 33 Evaluation: 15
+MRPS: 33 Evaluation: 30
+mean_MRPS:35.4
+mean_Evaluations:23.8
+Running time: 0:00:29
+--------------------------
+size of binary_string: 80
+MRPS: 121 Evaluation: 35
+MRPS: 99 Evaluation: 39
+MRPS: 107 Evaluation: 40
+MRPS: 119 Evaluation: 41
+MRPS: 105 Evaluation: 34
+MRPS: 95 Evaluation: 35
+MRPS: 123 Evaluation: 39
+MRPS: 121 Evaluation: 31
+MRPS: 115 Evaluation: 39
+MRPS: 101 Evaluation: 39
+mean_MRPS:110.6
+mean_Evaluations:37.2
+Running time: 0:02:59
+--------------------------
+size of binary_string: 160
+MRPS: 513 Evaluation: 54
+MRPS: 381 Evaluation: 60
+MRPS: 515 Evaluation: 59
+MRPS: 439 Evaluation: 51
+MRPS: 383 Evaluation: 52
+MRPS: 483 Evaluation: 46
+MRPS: 513 Evaluation: 59
+MRPS: 443 Evaluation: 52
+MRPS: 529 Evaluation: 51
+MRPS: 513 Evaluation: 53
+mean_MRPS:471.2
+mean_Evaluations:53.7
+Running time: 0:57:43
+--------------------------
