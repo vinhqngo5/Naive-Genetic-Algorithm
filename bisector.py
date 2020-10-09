@@ -7,7 +7,7 @@ class Bisector:
     def find_upperbound(l_size, crossover_method, fitness_function, tournament_size = 4, seed_offset = 0, num_runs = 10):
         upper_bound = 2
         success = False
-        while not success:
+        while (success != 10):
             upper_bound = 2 * upper_bound
             if (upper_bound > 8192):
                 return -1
@@ -25,8 +25,8 @@ class Bisector:
     def find_minimum_population_size(l_size, crossover_method, fitness_function, tournament_size = 4, seed_offset=0, num_runs=10):
         upper_bound = Bisector.find_upperbound(l_size, crossover_method, fitness_function)
         # print("upper_bound:", upper_bound)
-        if upper_bound == -1: return -1
-        lower_bound = 1
+        if upper_bound == -1: return -1, -1
+        lower_bound = upper_bound // 2
         res_size = (upper_bound + lower_bound) // 2
         while(lower_bound <= upper_bound):
             res_size = (upper_bound + lower_bound) // 2
@@ -38,7 +38,7 @@ class Bisector:
                 stable, evolved_population, evaluations = population.evolve_population(crossover_method, fitness_function, tournament_size)
                 if stable:
                     success += 1
-            if (success):
+            if (success == 10):
                 upper_bound = res_size - 1
             else:
                 lower_bound = res_size + 1

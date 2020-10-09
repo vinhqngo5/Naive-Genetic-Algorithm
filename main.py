@@ -5,9 +5,9 @@ from datetime import timedelta
 import calculate_fitness_function
 import time
 
-f = open("output.txt", "a")
-print('*********One_Max (one_point_crossover)*********')
-f.write('*********One_Max (one_point_crossover)*********\n')
+f = open("result\\test.txt", "a")
+print('*********OneMax (one_point_crossover)*********')
+f.write('*********OneMax (one_point_crossover)*********\n')
 
 sum_MRPS, sum_Evaluations = 0, 0
 cases = [10, 20, 40, 80, 160]
