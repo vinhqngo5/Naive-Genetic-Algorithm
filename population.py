@@ -6,6 +6,7 @@ import calculate_fitness_function
 class Population:
     def __init__(self, population_size, l_size):
         self.individuals = []
+        self.Evaluation_times = 0
         self.l_size = l_size
         self.population_size = population_size
         # using method in extention to create a random binary string with size l
@@ -16,30 +17,32 @@ class Population:
     # one-point crossover 
     @staticmethod
     def one_point_crossover(parent1, parent2):
-        child1 = Individual('')
-        child2 = Individual('')
+        sub_child1, sub_child2 = [], []
         # Create a random crossover_point
         crossover_point = randint(0, parent1.length())
         for i in range(crossover_point):
-            child1.binary_string += parent1.binary_string[i]
-            child2.binary_string += parent2.binary_string[i]
+            sub_child1.append(parent1.binary_string[i])
+            sub_child2.append(parent2.binary_string[i])
         for i in range(crossover_point, parent1.length()):
-            child1.binary_string += parent2.binary_string[i]
-            child2.binary_string += parent1.binary_string[i]
+            sub_child1.append(parent2.binary_string[i])
+            sub_child2.append(parent1.binary_string[i])
+        child1 = Individual(''.join(sub_child1))
+        child2 = Individual(''.join(sub_child2))
         return child1, child2
 
     # uniform crossover
     @staticmethod
     def uniform_crossover(parent1, parent2):
-        child1 = Individual('')
-        child2 = Individual('')
+        sub_child1, sub_child2 = [], []
         for i in range(parent1.length()):
             if (randint(0, 1)):
-                child1.binary_string += parent1.binary_string[i]
-                child2.binary_string += parent2.binary_string[i]
+                csub_child1.append(parent1.binary_string[i])
+                sub_child2.append(parent2.binary_string[i])
             else:
-                child1.binary_string += parent2.binary_string[i]
-                child2.binary_string += parent1.binary_string[i]
+                sub_child1.append(parent2.binary_string[i])
+                sub_child2.append(parent1.binary_string[i])
+        child1 = Individual(''.join(sub_child1))
+        child2 = Individual(''.join(sub_child2))
         return child1, child2
 
     # breeding best_individuals with delegate is crossover_method
@@ -62,6 +65,7 @@ class Population:
     def check_popuation(self, fitness_function):
     	for i in range(len(self.individuals)):
             if (self.individuals[i].fitness(fitness_function) == self.l_size):
+                self.Evaluation_times += 1
                 return 1
             if (i == len(self.individuals) - 1):
                 return 0
@@ -74,8 +78,10 @@ class Population:
             extension.shuffle_list_randomly(self.individuals)
             for i in range(len(self.individuals) // tournament_selection_size):
                 max_fitness_pos, max_fitness_score = i * tournament_selection_size, self.individuals[i * tournament_selection_size].fitness(fitness_function)
+                self.Evaluation_times += 1
                 for j in range(1, tournament_selection_size):
                     fitness_score = self.individuals[i * tournament_selection_size + j].fitness(fitness_function)
+                    self.Evaluation_times += 1
                     if (fitness_score > max_fitness_score):
                         max_fitness_pos = i * tournament_selection_size + j
                         max_fitness_score = fitness_score
@@ -107,8 +113,9 @@ class Population:
             else: 
                 count_stable_times = 0
             average_fitness = new_average_fitness
-            count_generations += 1
-        return self.check_popuation(fitness_function) ,self.individuals, count_generations
+            count_generations += 1 
+            # count generation là đếm số thế hệ, Evaluation_times là số lần gọi hàm fitness
+        return self.check_popuation(fitness_function) ,self.individuals, self.Evaluation_times
 
     # calculate average fitness of the population
     def calculate_average_fitness(self, fitness_function):
