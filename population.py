@@ -36,7 +36,7 @@ class Population:
         sub_child1, sub_child2 = [], []
         for i in range(parent1.length()):
             if (randint(0, 1)):
-                csub_child1.append(parent1.binary_string[i])
+                sub_child1.append(parent1.binary_string[i])
                 sub_child2.append(parent2.binary_string[i])
             else:
                 sub_child1.append(parent2.binary_string[i])
