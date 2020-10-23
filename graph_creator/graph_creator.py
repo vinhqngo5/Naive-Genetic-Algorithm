@@ -1,13 +1,17 @@
 import matplotlib.pyplot as plt
 from option import graph_option
-
+import math
 
 def draw_graph(filepath, label_name, type):
     with open(filepath, "r") as f:
         content = f.readlines()
     MRPS = list(map(float, content[0].split()))
     size = list(map(float, content[1].split()))
-    plt.plot(size, MRPS, type, label = label_name)
+    for i in range(len(MRPS)):
+        MRPS[i] = math.log(MRPS[i])
+        size[i] = math.log(size[i])
+    plt.plot()
+    plt.errorbar(size, MRPS, yerr = 1, fmt = type, label = label_name)
 
 
 print("1. ONEMAX_MRPS\n2. ONEMAX_Evaluations\n3. TRAP_MRPS\n4. TRAP_Evaluations")
@@ -18,4 +22,3 @@ draw_graph(path2, label2, '-bo')
 plt.ylabel(graph_label)
 plt.legend()
 plt.show()
-
