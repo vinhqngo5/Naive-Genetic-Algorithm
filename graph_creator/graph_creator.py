@@ -7,11 +7,11 @@ def draw_graph(filepath, label_name, type):
         content = f.readlines()
     MRPS = list(map(float, content[0].split()))
     size = list(map(float, content[1].split()))
-    for i in range(len(MRPS)):
-        MRPS[i] = math.log(MRPS[i])
-        size[i] = math.log(size[i])
+    yerr = list(map(float, content[2].split()))
     plt.plot()
-    plt.errorbar(size, MRPS, yerr = 1, fmt = type, label = label_name)
+    plt.yscale('symlog')
+    plt.xscale('symlog')
+    plt.errorbar(size, MRPS, yerr = yerr, fmt = type, label = label_name)
 
 
 print("1. ONEMAX_MRPS\n2. ONEMAX_Evaluations\n3. TRAP_MRPS\n4. TRAP_Evaluations")
