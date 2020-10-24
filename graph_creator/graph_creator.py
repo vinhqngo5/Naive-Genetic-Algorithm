@@ -11,6 +11,7 @@ def draw_graph(filepath, label_name, type):
     plt.plot()
     plt.yscale('symlog')
     plt.xscale('symlog')
+    plt.xlabel('Problem size')
     plt.errorbar(size, MRPS, yerr = yerr, fmt = type, label = label_name)
 
 
